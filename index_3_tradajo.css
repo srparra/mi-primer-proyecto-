@@ -1,0 +1,64 @@
+.contaner11{
+    background-color: rgb(163, 178, 189);
+    display: flex;
+    justify-content:space-between ;
+    
+}
+
+#buscar_mascota {
+     width: 1000px;
+     height: 20px;
+     margin-top: 30px;
+}
+
+#Inicio{
+    width: 100px;
+    height: 25px;
+    margin-top: 30px;
+    background-color: rgb(45, 146, 214);
+    color: aliceblue;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+#petlodia{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container2 {  
+   margin:10px  0px ;
+
+}
+
+.sudcontenr{
+    margin-left: -5px;
+    margin-top: 30px;
+    width: 1100px;
+    border-style: solid;
+}
+
+.megustas{
+    background-color: rgb(240, 240, 131);
+}
+
+.container3 {
+    border-style:solid ;
+    margin-left: 1150px;
+    margin-top:-469px;
+    width: 450px ;
+    height: 0%;
+    
+}
+
+.sudcontainer3 {
+    margin: 20px;
+
+}
+
+#queso{
+    background-color: rgb(0, 255, 64);
+     
+      
+        
+}
