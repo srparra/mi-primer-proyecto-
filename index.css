@@ -1,0 +1,110 @@
+header {
+    display :flex; 
+    background-color: rgb(17,150,150 ); 
+    padding: 5px 30px;
+    border:solid;
+   height: 250px;
+   align-items:center;
+  flex-direction: column;
+  justify-content: end;
+  
+
+}
+
+.logo  {
+    display :flex; 
+    width: 70px;
+   height: 50px;
+   margin : 5px 0px 0px 30px ;
+   
+
+}
+.logo h2 {
+    display: flex; 
+    color:aliceblue;
+    margin: 10px 10px 10px 30px ; 
+    font-family :'Courier New', Courier, monospace;
+
+
+
+}
+.nav-link{ 
+color: #000000;
+text-decoration: none;
+transition: color 0.3s ease;
+font-family: 'Courier New', Courier, monospace;
+margin : 20px; 
+}
+
+.link{
+    display: flex;
+    flex-direction:row;
+    text-decoration: none;
+    transition: color 0.3s ease;
+   
+}
+
+#nav-link1 {
+    color: #000000;
+text-decoration: none;
+transition: color 0.3s ease;
+font-family: 'Courier New', Courier, monospace;
+margin : 20px;  
+}
+
+
+#max { 
+ width: 110px;
+ height: 30px;
+ background-color: purple;
+   color: white;
+  border: solid 2px white;
+ border-radius: 20px;
+ font-family: 'Courier New', Courier, monospace;
+ margin: 17px 
+}
+.donacion:hover{
+    transition: 0.25s;
+    color: purple;
+    background-color: white;
+    border: solid 2px purple;
+}
+
+.perros{
+   display : flex; 
+   margin : 20px ; 
+   
+  }   
+.perros img {
+    display: flex ;  
+    width : 50px ; 
+    height: 50px ;
+    flex-direction: row;
+
+}
+.bperros{
+    width: 20%;
+    height: 30px;
+}
+.container {
+    display :flex;
+    justify-content: space-between;
+}
+.container_pequeño {
+    background-color: #f80606;
+
+
+
+}
+.container_pequeño2 {
+    background-color: aquamarine;
+
+}
+.container_pequeño3 {
+    background-color: #77fc0a;
+}
+
+
+
+
+
