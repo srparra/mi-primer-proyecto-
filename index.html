@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestión de Visitas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>hola {{nombre}} {[apellido}} tiene {{edad}}</h1>
-    <h1>hola flask</h1>
-    <img src="https://www.google.com/imgres?q=im%C3%A1genes&imgurl=https%3A%2F%2Fethic.es%2Fwp-content%2Fuploads%2F2023%2F03%2Fimagen.jpg&imgrefurl=https%3A%2F%2Fethic.es%2F2023%2F03%2Fel-enigma-de-la-imagen%2F&docid=JnwiBhDDTaBYGM&tbnid=Qrfe4Fu3jv5IHM&vet=12ahUKEwj32qmPusCHAxV6GLkGHX4MBE0QM3oECCUQAA..i&w=1500&h=900&hcb=2&ved=2ahUKEwj32qmPusCHAxV6GLkGHX4MBE0QM3oECCUQAA"
+    <div class="container">
+        <header>
+            <h1>Total de Visitas: {{ visitas }}</h1>
+            <h2>Reinicios del Contador: {{ reinicios }}</h2>
+        </header>
+
+        <div class="controls">
+            <form action="{{ url_for('increment_visits') }}" method="POST">
+                <button type="submit" class="button increment">Añadir 2 Visitas</button>
+            </form>
+
+            <form action="{{ url_for('reset_visits') }}" method="POST">
+                <button type="submit" class="button reset">Reiniciar Contador</button>
+            </form>
+
+            <form action="{{ url_for('add_number') }}" method="POST">
+                <input type="number" name="numero" placeholder="Número a añadir" class="number-input">
+                <button type="submit" class="button add">Sumar Número</button>
+            </form>
+
+            <a href="{{ url_for('clear_session') }}" class="link">Eliminar Sesión</a>
+        </div>
+    </div>
+</body>
 </html>
