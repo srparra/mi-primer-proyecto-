@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>¿ quieres conocer tu futuro ? </h1>
+  <div class = "contenedor">
+    <form action="/enviar" method="post">
+        <div class = "nombre" >
+         <label for="nombre">Nombre:</label>
+         <input type="text" id="nombre" name="nombre" required><br><br>
+        </div>
+        <div class = "numero" >
+            <label for = "un numero">numero:</label> 
+            <input type="number" id="numero " name="numero" required><br><br>
+        </div>
+        <div class = "lugar" >
+          <label for = "lugar">un lugar:</label> 
+          <input type="text" id="lugar" name="lugar" required><br><br>
+      </div>
+      <div class = "comida" >
+        <label for = "comida favorita">comida favorita:</label> 
+        <input type="text" id="comida" name="comida" required><br><br>
+    </div>
+    <div class ="profesiones">
+      <label for="profesiones">profesiones </label> 
+        <select id="profesiones" name="profesiones" required><br><br> 
+          <option value="queso">profesor</option>
+          <option value="pan">doctor</option>
+          <option value="carne">abogado</option>
+          <option value="tomate">bombero</option>
+          <option value="lechuga">cirujano</option>
+        </select>
+        <div class = inviar>   
+          <input type="submit" value="Enviar">
+        </div> 
+  </div>         
+</body>
+</html>

@@ -1,40 +1,39 @@
-from flask import Flask, session, redirect, url_for, request, render_template
+from flask import Flask, render_template, request, redirect, url_for, session
+import random
 
 app = Flask(__name__)
-app.secret_key = 'serresiete'
+app.secret_key = 'supersecreto'
 
 @app.route('/')
-def index():
-    if 'visitas' not in session:
-        session['visitas'] = 0
-    if 'reinicios' not in session:
-        session['reinicios'] = 0
-    
-    return render_template('index.html', visitas=session['visitas'], reinicios=session['reinicios'])
+def inicio():
+    profesiones= ['Doctor', 'profesor', 'abogado', 'bombero', 'cirujano']
+    return render_template('inicio.html', profesiones=profesiones)
 
-@app.route('/increment_visits', methods=['POST'])
-def increment_visits():
-    if 'visitas' in session:
-        session['visitas'] += 2  
-    return redirect(url_for('index'))
+@app.route('/enviar', methods=['POST'])
+def enviar():
+    session['nombre'] = request.form['nombre']
+    session['lugar'] = request.form['lugar']
+    session['numero'] = request.form['numero']
+    session['comida'] = request.form['comida']
+    session['profesion'] = request.form['profesion']
 
-@app.route('/reset_visits', methods=['POST'])
-def reset_visits():
-    session['visitas'] = 0
-    session['reinicios'] += 1
-    return redirect(url_for('index'))
+    return redirect(url_for('mostrar'))
 
-@app.route('/add_number', methods=['POST'])
-def add_number():
-    if 'visitas' in session:
-        numero = int(request.form['numero'])
-        session['visitas'] += numero
-    return redirect(url_for('index'))
+@app.route('/mostrar')
+def mostrar():
+    nombre = session.get('nombre', 'Desconocido')
+    lugar = session.get('lugar', 'algún lugar')
+    numero = session.get('numero', 'algunos')
+    comida = session.get('comida', 'comida')
+    profesion = session.get('profesion', 'profesión')
 
-@app.route('/clear_session')
-def clear_session():
-    session.clear()
-    return redirect(url_for('index'))
+    futuro_bueno = f"Soy el adivino del Dojo, {nombre} tendrá un viaje muy largo dentro de {numero} años a {lugar} y estará el resto de sus días preparando {comida} para todas las personas que quieran. Cambio de profesión y ahora es {profesion}."
+
+    futuro_malo = f"Soy el adivino del Dojo, {nombre} tendrá {numero} años de mala suerte, nunca conocerá {lugar} y jamás volvió a comer {comida}."
+
+    session['destino'] = random.choice([futuro_bueno, futuro_malo])
+
+    return render_template('mostrar.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
